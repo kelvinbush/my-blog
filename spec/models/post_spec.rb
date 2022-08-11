@@ -41,5 +41,4 @@ RSpec.describe Post, type: :model do
     expect(subject.last_five_comments.length).to eq 5
     expect(subject.last_five_comments[0].text).to eq 'Hi John!7'
   end
-
 end
