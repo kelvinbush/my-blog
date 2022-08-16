@@ -16,7 +16,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
   context 'when GET /show' do
-    before(:example) { get users_path(1)}
+    before(:example) { get user_path(1)}
 
     it 'should have success code of 200' do
       expect(response).to have_http_status(:ok)
