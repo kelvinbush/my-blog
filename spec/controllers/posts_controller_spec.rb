@@ -27,7 +27,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should display correct content in the views' do
-      expect(response.body).to include('A post  based on the post id')
+      expect(response.body).to include('A post based on the post id')
     end
   end
 end
