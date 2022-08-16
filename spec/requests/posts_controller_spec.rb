@@ -3,7 +3,7 @@ RSpec.describe 'Posts', type: :request do
   context 'when GET /index' do
     before(:example) { get user_posts_path(1) }
 
-    it 'should have success code of 200' do
+    it 'should have success code of ok' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -18,7 +18,7 @@ RSpec.describe 'Posts', type: :request do
   context 'when GET /show' do
     before(:example) { get user_post_path(1, 1) }
 
-    it 'should have success code of 200' do
+    it 'should have success code of ok' do
       expect(response).to have_http_status(:ok)
     end
 
