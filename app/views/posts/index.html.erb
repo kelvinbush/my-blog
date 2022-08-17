@@ -1,1 +1,9 @@
-<% if @posts.count > 0 %>  <%= render partial: "shared/user/user_header", locals: { user: @posts[0].author } %>  <% @posts.each do |post| %>    <%= render partial: "shared/post/post_summary", locals: { post: post } %>    <%= render partial: "shared/post/comment", locals: { post: post } %>  <% end %><% else %>  <p>This user has no posts yet</p><% end %>
+<% if @posts.count > 0 %>
+  <%= render partial: "shared/user/user_header", locals: { user: @posts[0].author } %>
+  <% @posts.each do |post| %>
+    <%= render partial: "shared/post/post_summary", locals: { post: post } %>
+    <%= render partial: "shared/post/comment", locals: { post: post } %>
+  <% end %>
+<% else %>
+  <p>This user has no posts yet</p>
+<% end %>
