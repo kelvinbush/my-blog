@@ -1,1 +1,1 @@
-<h1>A user based on the user id</h1>
+<%= render partial: "shared/user/user_header", locals: { user: @user } %><div class="bio">  <h4>Bio</h4>  <p><%= @user.bio %></p></div><% if @user.posts.count > 0 %>  <% @user.last_three_posts.each do |post| %>    <%= render partial: "shared/post/post_summary", locals: { post: post } %>  <% end %>  <%= link_to "See all posts", user_posts_path(@user), class: 'all_posts' %><% else %>  <p>This user has no post</p><% end %>
