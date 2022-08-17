@@ -24,7 +24,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 16px;
-  background-color: #EEEEEE;
+  background-color: #eee;
 }
 
 .user_header {
@@ -33,16 +33,15 @@ body {
   padding: 0 16px;
   margin: 4px;
   border-radius: 8px;
-  border: 1px solid #71C9CE;
+  border: 1px solid #71c9ce;
   justify-content: space-between;
-
 
   &_name {
     text-decoration: none;
     font-weight: bold;
     font-size: 23px;
     color: #2e898e;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
 
     &:hover {
       text-decoration: underline;
@@ -69,7 +68,7 @@ body {
   padding: 8px 16px;
   margin-top: 20px;
   border-radius: 8px;
-  border: 1px solid #71C9CE;
+  border: 1px solid #71c9ce;
 
   h4 {
     font-weight: bold;
@@ -104,11 +103,10 @@ body {
   margin-top: 4px;
   margin-bottom: 20px;
   border-radius: 8px;
-  border: 1px solid #71C9CE;
+  border: 1px solid #71c9ce;
 }
 
 .post {
-
   &_header {
     display: flex;
     justify-content: space-between;
@@ -129,7 +127,7 @@ span {
   padding: 8px 16px;
   margin: 20px 0;
   border-radius: 8px;
-  border: 1px solid #71C9CE;
+  border: 1px solid #71c9ce;
 
   h4 {
     font-size: 18px;
