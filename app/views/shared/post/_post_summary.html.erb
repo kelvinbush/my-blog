@@ -1,0 +1,8 @@
+<div class="post_sum">
+  <h4><%= link_to post.title, user_post_path(post.author, post) %></h4>
+  <p class="text"><%= post.text %></p>
+  <div class="interactions">
+    <p>Comments: <span><%= post.comments.count %></span></p>
+    <p>Likes: <span><%= post.likes.count %></span></p>
+  </div>
+</div>

@@ -1,1 +1,15 @@
-<h1>A post based on the post id</h1>
+<div class="post">
+  <div class="post_header">
+    <h4><%= @post.title %> by <%= @post.author.name %></h4>
+    <div>
+      <p>Comments: <span><%= @post.comments.count %></span></p>
+      <p>Likes: <span><%= @post.likes.count %></span></p>
+    </div>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+<div class="comments">
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.author.name %> : <%= comment.text %></p>
+  <% end %>
+</div>
