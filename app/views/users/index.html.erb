@@ -1,1 +1,1 @@
-<h1>Here is a list of users</h1>
+<% if @users.count > 0 %>  <% @users.each do |user| %>    <%= render partial: "shared/user/user_header", locals: { user: user } %>  <% end %><% else %>  <p>No users found</p><% end %>
