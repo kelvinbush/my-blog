@@ -17,7 +17,7 @@ RSpec.describe Comment, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'should update comments counter' do
+  it 'should update comment counter' do
     expect(subject.post.comments_counter).to eq 3
   end
 end
