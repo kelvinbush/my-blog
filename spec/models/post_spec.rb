@@ -16,7 +16,7 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'comments counter should be greater or equal to 0' do
+  it 'comment counter should be greater or equal to 0' do
     subject.comments_counter = -1
     expect(subject).to_not be_valid
   end
@@ -30,7 +30,7 @@ RSpec.describe Post, type: :model do
     expect(subject.author.posts_counter).to eq 3
   end
 
-  it 'should get last 5 comments' do
+  it 'should get last 5 comment' do
     Comment.create(post: subject, author: subject.author, text: 'Hi John!')
     Comment.create(post: subject, author: subject.author, text: 'Hi John!2')
     Comment.create(post: subject, author: subject.author, text: 'Hi John!3')
