@@ -42,7 +42,7 @@ RSpec.describe 'PostShows', type: :system do
     expect(page).to have_content(comment.author.name)
   end
 
-  it 'shows the comment each comment author left' do
+  it "shows the comment each comment author left" do
     visit user_post_path(@user, @post)
     comment = @post.comments.first
     comment2 = @post.comments.last
