@@ -55,7 +55,7 @@ RSpec.describe 'PostsIndices', type: :system do
     expect(page).to have_content('Pagination')
   end
 
-  it "should redirect to post page on post click" do
+  it 'should redirect to post page on post click' do
     visit user_path(@user)
     click_on @post.title
     expect(page).to have_current_path(user_post_path(user_id: @user.id, id: @post.id))
