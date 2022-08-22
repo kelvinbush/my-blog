@@ -23,7 +23,7 @@ RSpec.describe "Users' Index Page", type: :system do
     expect(page).to have_content("Number of posts: #{@user.posts_counter}")
   end
 
-  it "should redirect to user's page" do
+  it 'should redirect to user\'s page' do
     @user2 = User.create(name: 'Ken', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     visit users_path
     click_on @user2.name
