@@ -136,7 +136,6 @@ span {
 }
 
 .all_posts {
-  width: 150px;
   margin: 20px auto;
   display: flex;
   justify-content: center;
@@ -146,4 +145,11 @@ span {
   font-weight: bold;
   background-color: #2e898e;
   color: white;
+  outline: none;
+  border: none;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
 }
