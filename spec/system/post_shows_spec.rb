@@ -36,7 +36,7 @@ RSpec.describe 'PostShows', type: :system do
     expect(page).to have_content(@post.text)
   end
 
-  it 'shows username of each commentor' do
+  it 'shows username of each comment author' do
     visit user_post_path(@user, @post)
     comment = @post.comments.first
     expect(page).to have_content(comment.author.name)
