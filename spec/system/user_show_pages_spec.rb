@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UserShowPages", type: :system do
+RSpec.describe 'UserShowPages', type: :system do
   before do
     driven_by(:rack_test)
     @user = User.create(name: 'Darwin', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
@@ -10,17 +10,17 @@ RSpec.describe "UserShowPages", type: :system do
     Post.create(title: 'Hello4', text: 'This is my second post', author: @user)
   end
 
-  it "shows user profile picture" do
+  it 'shows user profile picture' do
     visit user_path(@user)
     expect(page).to have_css("img[src*='#{@user.photo}']")
   end
 
-  it "shows the username the user" do
+  it 'shows the username the user' do
     visit user_path(@user)
     expect(page).to have_content(@user.name)
   end
 
-  it "shows number of posts for the user" do
+  it 'shows number of posts for the user' do
     visit user_path(@user)
     expect(page).to have_content("Number of posts: #{@user.posts_counter}")
   end
@@ -38,7 +38,7 @@ RSpec.describe "UserShowPages", type: :system do
     expect(page).to have_content(last_three_posts[2].title)
   end
 
-  it "shows view all user posts button" do
+  it 'shows view all user posts button' do
     visit user_path(@user)
     expect(page).to have_selector(:link_or_button, 'See all posts', count: 1)
   end

@@ -16,7 +16,6 @@ RSpec.describe 'Posts', type: :request do
     it "should render the 'index' template" do
       expect(response).to render_template(:index)
     end
-
   end
   context 'when GET /show' do
     before(:example) { get user_post_path(user, post) }
@@ -28,6 +27,5 @@ RSpec.describe 'Posts', type: :request do
     it "should render the 'show' template" do
       expect(response).to render_template(:show)
     end
-
   end
 end
