@@ -1,7 +1,13 @@
 require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
+  let!(:user) { User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
+  let!(:post) do
+    Post.create(author: user, title: 'Hello', text: 'This is my first post')
+  end
+
   context 'when GET /index' do
-    before(:example) { get user_posts_path(1) }
+    before { @posts = post }
+    before(:example) { get user_posts_path(user.id) }
 
     it 'should have success code of ok' do
       expect(response).to have_http_status(:ok)
@@ -10,13 +16,9 @@ RSpec.describe 'Posts', type: :request do
     it "should render the 'index' template" do
       expect(response).to render_template(:index)
     end
-
-    it 'should display correct content in the views' do
-      expect(response.body).to include('Here is a list of posts for a given user')
-    end
   end
   context 'when GET /show' do
-    before(:example) { get user_post_path(1, 1) }
+    before(:example) { get user_post_path(user, post) }
 
     it 'should have success code of ok' do
       expect(response).to have_http_status(:ok)
@@ -24,10 +26,6 @@ RSpec.describe 'Posts', type: :request do
 
     it "should render the 'show' template" do
       expect(response).to render_template(:show)
-    end
-
-    it 'should display correct content in the views' do
-      expect(response.body).to include('A post based on the post id')
     end
   end
 end
