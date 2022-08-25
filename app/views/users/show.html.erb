@@ -11,4 +11,6 @@
 <% else %>
   <p>This user has no post</p>
 <% end %>
-<%= link_to "Create new post" , new_user_post_path(@user), class: "all_posts" %>
+<% if current_user == @user %>
+  <%= link_to "Create new post", new_user_post_path(@user), class: "all_posts" %>
+<% end %>
