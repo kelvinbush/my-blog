@@ -1,4 +1,4 @@
-  class LikesController < ApplicationController
+class LikesController < ApplicationController
   def create
     @user = current_user
     @post = Post.includes(:author).find(params[:post_id])
