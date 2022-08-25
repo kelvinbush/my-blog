@@ -1,6 +1,6 @@
 <h3>Create new Post</h3>
 
-<%= form_with model: @post, url: user_posts_path, method: :post do |form| %>
+<%= form_with model: @post, url: user_posts_path, method: :post, data: { turbo: false } do |form| %>
   <div class="mb-3">
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>

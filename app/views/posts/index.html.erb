@@ -2,7 +2,7 @@
   <%= render partial: "shared/user/user_header", locals: { user: @posts[0].author } %>
   <% @posts.each do |post| %>
     <%= render partial: "shared/post/post_summary", locals: { post: post } %>
-    <%= render partial: "shared/post/comment", locals: { post: post } %>
+    <%= render partial: "shared/post/comment", locals: { comments: post.last_five_comments } %>
   <% end %>
   <button>Pagination</button>
 <% else %>

@@ -7,11 +7,10 @@
     </div>
   </div>
   <p><%= @post.text %></p>
-  <%= render partial: "shared/comment/new_comment"%>
+  <%= render partial: "shared/comment/new_comment" %>
 </div>
-<div class="comments">
-  <% @post.comments.each do |comment| %>
-    <p><%= comment.author.name %> : <%= comment.text %></p>
-  <% end %>
-</div>
-<%= button_to 'Like', user_post_likes_path(@post.author, @post), method: :post, class: 'all_posts'%>
+<%= render partial: "shared/post/comment", locals: { comments: @post.comments } %>
+<%= button_to 'Like', user_post_likes_path(@post.author, @post), method: :post, class: 'all_posts' %>
+<% if can? :destroy, @post %>
+  <%= button_to "Delete Post", user_post_path(@post.author, @post), method: :delete, class: "btn btn-outline-danger btn-lg btn-block" %>
+<% end %>
