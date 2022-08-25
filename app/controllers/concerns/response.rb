@@ -1,4 +1,4 @@
-  module Response
+module Response
   extend ActiveSupport::Concern
 
   def json_response(object, status = :ok)
