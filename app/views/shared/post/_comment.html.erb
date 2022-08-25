@@ -1,5 +1,11 @@
 <div class="comments">
-  <% post.last_five_comments.each do |comment| %>
-    <p><%= comment.author.name %> : <%= comment.text %></p>
+  <% comments.each do |comment| %>
+    <div class="d-flex justify-content-between align-items-center">
+      <p><%= comment.author.name %> : <%= comment.text %></p>
+      <% if can? :delete, comment %>
+        <%= button_to "Delete", user_post_comment_path(comment.author, comment.post, comment),
+                      method: :delete, class: "btn btn-outline-danger btn-sm" %>
+      <% end %>
+    </div>
   <% end %>
 </div>
