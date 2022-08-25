@@ -37,6 +37,4 @@ class ApiController < ApplicationController
     comments = Comment.where(post_id: params[:post_id], author_id: params[:user_id])
     json_response(comments)
   end
-
-
 end
